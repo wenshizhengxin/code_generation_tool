@@ -1,0 +1,21 @@
+{
+    "name": "wenshizhengxin/code_generation_tools",
+    "description": "epii-admin框架 代码快速构建工具",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Temple Chan",
+            "email": "1421224516@qq.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.0.0",
+        "epii/admin-center": ">=0.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "wenshizhengxin\\code_generation_tools\\": "src/"
+        }
+    }
+}
