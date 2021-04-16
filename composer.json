@@ -1,5 +1,5 @@
 {
-    "name": "wenshizhengxin/code_generation_tools",
+    "name": "wenshizhengxin/code_generation_tool",
     "description": "epii-admin框架 代码快速构建工具",
     "type": "library",
     "authors": [
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "wenshizhengxin\\code_generation_tools\\": "src/"
+            "wenshizhengxin\\code_generation_tool\\": "src/"
         }
     }
 }
