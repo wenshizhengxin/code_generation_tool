@@ -17,11 +17,12 @@ class ajax_data implements ActionInterface
         // TODO: Implement getCode() method.
         $whereText = '';
 
-        foreach ($args as $arg => $arg2) {
+        foreach ($args as $arg) {
+            $var = explode('/', $arg)[0];
             $whereText .= "
-        if (\$$arg = Args::params('$arg')) {
+        if (\$$var = Args::params('$var')) {
             \$where[] = [
-                '$arg', 'like', '%' . \$$arg . '%'
+                '$var', 'like', '%' . \$$var . '%'
             ];
         }";
         }

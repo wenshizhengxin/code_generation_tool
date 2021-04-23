@@ -11,7 +11,8 @@ class add implements ActionInterface
     {
         // TODO: Implement getCode() method.
         $insertData = '';
-        foreach ($args as $var => $arg) {
+        foreach ($args as $arg) {
+            $var = explode('/', $arg)[0];
             $insertData .= "
             '$var' => Args::params('$arg'),";
         }

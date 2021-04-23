@@ -53,6 +53,8 @@ class cgt_controller extends controller
     private function getArgs(string $args)
     {
         $args = array_filter(explode("\n", $args));
+        return $args;
+
         $data = [];
         foreach ($args as $i => $arg) {
             $key = explode('/', $arg)[0];
