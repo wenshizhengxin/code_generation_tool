@@ -64,7 +64,7 @@ class index_html implements ActionInterface
 
 <div class="content">
     <div class="card-body table-responsive" style="padding-top: 0px">
-        <a class="btn btn-outline-primary btn-table-tool btn-dialog" data-area="50%,70%" title="新增"
+        <a class="btn btn-outline-primary btn-table-tool btn-dialog" data-intop="1" data-area="50%,70%" title="新增"
            href="?app=$dbName@add">新增</a>
     </div>
     <div class="card-body table-responsive" style="padding-top: 0px">
@@ -73,6 +73,7 @@ class index_html implements ActionInterface
             <tr>
                 $fieldHtml
                 <th data-formatter="epiiFormatter.btns"
+                    data-intop="1"
                     data-area="50%,70%"
                     data-btns="edit,del"
                     data-edit-url="?app=$dbName@add&id={id}"

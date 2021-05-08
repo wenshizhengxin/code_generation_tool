@@ -24,7 +24,7 @@ class add_html implements ActionInterface
                 $formHtml .= '
     <div class="form-group">
         <label>' . $name . '：</label>
-        <input type="text" class="form-control" name="' . $var . '" placeholder="请输入' . $name . '" value="{$' . $dbName . '.' . $var . ' ? ""}">
+        <input type="text" class="form-control" name="' . $var . '" placeholder="请输入' . $name . '" value="{$' . $dbName . '[\'' . $var . '\'] ? ""}">
     </div>';
             }
         }
@@ -34,7 +34,7 @@ class add_html implements ActionInterface
 <form role="form" class="epii" method="post" data-form="1" action="">
     $formHtml
     <div class="form-footer">
-        <input type="hidden" name="id" value="{\$$dbName.id ? 0}">
+        <input type="hidden" name="id" value="{\$${dbName}['id'] ? 0}">
         <button type="submit" class="btn btn-primary">提交</button>
     </div>
 </form>

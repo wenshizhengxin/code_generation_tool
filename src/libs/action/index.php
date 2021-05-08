@@ -21,6 +21,7 @@ public function index() {
     try {
         \$this->adminUiDisplay();
     } catch (\\Exception \$e) {
+        \$this->error(\$e->getMessage());
     }
 }
 R;

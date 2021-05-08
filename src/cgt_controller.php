@@ -19,7 +19,7 @@ class cgt_controller extends controller
     public function __construct()
     {
         $viewEngine = new EpiiViewEngine();
-        $viewEngine->init(['tpl_dir' => __DIR__ . '/view', 'cache_dir' => Tools::getRuntimeDirectory() . '/../view']);
+        $viewEngine->init(['tpl_dir' => __DIR__ . '/view', 'cache_dir' => Tools::getRuntimeDirectory() . '/view']);
         $this->setViewEngine($viewEngine);
     }
 
