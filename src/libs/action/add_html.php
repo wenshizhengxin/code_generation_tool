@@ -1,7 +1,7 @@
 <?php
 /**
  * 描述：
- * Created at 2021/4/13 17:37 by 陈庙琴
+ * Created at 2021/4/13 17:37 by Temple Chan
  */
 
 namespace wenshizhengxin\code_generation_tool\libs\action;
@@ -21,10 +21,16 @@ class add_html implements ActionInterface
             $var = explode('/', $arg)[0];
             $name = explode('/', $arg)[1];
             if (strpos($arg, '/ss') !== false) {
+                $inputHtml = '<input type="text" class="form-control" name="' . $var . '" placeholder="请输入' . $name . '" value="{$' . $dbName . '[\'' . $var . '\'] ? \'\'}">';
+                if (strpos($arg, '/select') !== false) {
+                    $inputHtml = '<select class="selectpicker" name="' . $var . '"></select>';
+                } else if (strpos($arg, '/textarea') !== false) {
+                    $inputHtml = '<textarea rows="5" class="form-control" name="' . $var . '" placeholder="请输入' . $name . '">{$' . $dbName . '[\'' . $var . '\'] ? \'\'}</textarea>';
+                }
                 $formHtml .= '
     <div class="form-group">
         <label>' . $name . '：</label>
-        <input type="text" class="form-control" name="' . $var . '" placeholder="请输入' . $name . '" value="{$' . $dbName . '[\'' . $var . '\'] ? ""}">
+        ' . $inputHtml . '
     </div>';
             }
         }

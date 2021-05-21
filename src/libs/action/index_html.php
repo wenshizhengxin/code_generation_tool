@@ -1,7 +1,7 @@
 <?php
 /**
  * 描述：
- * Created at 2021/4/13 17:37 by 陈庙琴
+ * Created at 2021/4/13 17:37 by Temple Chan
  */
 
 namespace wenshizhengxin\code_generation_tool\libs\action;
@@ -22,10 +22,14 @@ class index_html implements ActionInterface
             $var = explode('/', $arg)[0];
             $name = explode('/', $arg)[1];
             if (strpos($arg, '/ss') !== false) {
+                $inputHtml = '<input type="text" class="form-control" name="' . $var . '" placeholder="请输入' . $name . '">';
+                if (strpos($arg, '/select') !== false) {
+                    $inputHtml = '<select class="selectpicker" name="' . $var . '"></select>';
+                }
                 $formHtml .= '
                             <div class="form-group">
                                 <label>' . $name . '：</label>
-                                <input type="text" class="form-control" name="' . $var . '" placeholder="请输入' . $name . '">
+                                ' . $inputHtml . '
                             </div>';
             }
             if (strpos($arg, '/ll') !== false) {
@@ -77,7 +81,7 @@ class index_html implements ActionInterface
                     data-area="50%,70%"
                     data-btns="edit,del"
                     data-edit-url="?app=$dbName@add&id={id}"
-                    data-edit-title="修改"
+                    data-edit-title="编辑"
                     data-del-url="?app=$dbName@del&id={id}"
                     data-del-title="删除"
                 >操作
@@ -89,7 +93,7 @@ class index_html implements ActionInterface
 </div>
 <script type="text/javascript">
     function example(field_value, row, index, field_name) {
-        return '<a class="btn btn-outline-primary btn-sm" data-url="?app=$dbName@detail&id=' + row.wxid + '">示例</a>';
+        return '<a class="btn btn-outline-primary btn-sm btn-dialog" data-intop="1" data-area="50%,70%" title="编辑" href="?app=$dbName@add&id=' + row.id + '"><i class="fa fa-pencil"></i>编辑</a>';
     }
 </script>
 R;
