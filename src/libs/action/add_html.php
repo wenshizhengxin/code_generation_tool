@@ -23,7 +23,7 @@ class add_html implements ActionInterface
             if (strpos($arg, '/ss') !== false) {
                 $inputHtml = '<input type="text" class="form-control" name="' . $var . '" placeholder="请输入' . $name . '" value="{$' . $dbName . '[\'' . $var . '\'] ? \'\'}">';
                 if (strpos($arg, '/select') !== false) {
-                    $inputHtml = '<select class="selectpicker" name="' . $var . '"></select>';
+                    $inputHtml = '<select class="selectpicker" name="' . $var . '">{:options,,}</select>';
                 } else if (strpos($arg, '/textarea') !== false) {
                     $inputHtml = '<textarea rows="5" class="form-control" name="' . $var . '" placeholder="请输入' . $name . '">{$' . $dbName . '[\'' . $var . '\'] ? \'\'}</textarea>';
                 }

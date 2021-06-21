@@ -51,8 +51,6 @@ class index_html implements ActionInterface
                     <form role="form" data-form="1" data-search-table-id="1" data-title="自定义标题">
                         <div class="form-inline">
                             $formHtml
-                        </div>
-                        <div class="form-inline">
                             <div class="form-group" style="margin-left: 10px">
                                 <button type="submit" class="btn btn-primary">提交</button>
                                 <button type="reset" class="btn btn-default">重置</button>
@@ -67,11 +65,11 @@ class index_html implements ActionInterface
 
 
 <div class="content">
-    <div class="card-body table-responsive" style="padding-top: 0px">
+    <div class="card-body table-responsive" style="padding-top: 0">
         <a class="btn btn-outline-primary btn-table-tool btn-dialog" data-intop="1" data-area="50%,70%" title="新增"
            href="?app=$dbName@add">新增</a>
     </div>
-    <div class="card-body table-responsive" style="padding-top: 0px">
+    <div class="card-body table-responsive" style="padding-top: 0">
         <table data-table="1" data-url="?app=$dbName@ajax_data" id="table1" class="table table-hover">
             <thead>
             <tr>
