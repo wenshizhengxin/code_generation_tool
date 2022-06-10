@@ -67,7 +67,7 @@ class index_html implements ActionInterface
 <div class="content">
     <div class="card-body table-responsive" style="padding-top: 0">
         <a class="btn btn-outline-primary btn-table-tool btn-dialog" data-intop="1" data-area="50%,70%" title="新增"
-           href="?app=$dbName@add">新增</a>
+           href="?app=$dbName@add"><i class="fa fa-plus"></i>新增</a>
     </div>
     <div class="card-body table-responsive" style="padding-top: 0">
         <table data-table="1" data-url="?app=$dbName@ajax_data" id="table1" class="table table-hover">

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * 描述：
  * Created at 2021/4/13 17:37 by Temple Chan
@@ -21,14 +22,14 @@ class add_html implements ActionInterface
             $var = explode('/', $arg)[0];
             $name = explode('/', $arg)[1];
             if (strpos($arg, '/ss') !== false) {
-                $inputHtml = '<input type="text" class="form-control" name="' . $var . '" placeholder="请输入' . $name . '" value="{$' . $dbName . '[\'' . $var . '\'] ? \'\'}">';
+                $inputHtml = '<input type="text" class="form-control" name="' . $var . '" id="' . $var . '" placeholder="请输入' . $name . '" value="{$' . $dbName . '[\'' . $var . '\'] ? \'\'}">';
                 if (strpos($arg, '/select') !== false) {
-                    $inputHtml = '<select class="selectpicker" name="' . $var . '">{:options,,}</select>';
+                    $inputHtml = '<select class="selectpicker" name="' . $var . '" id="' . $var . '">{:options,,}</select>';
                 } else if (strpos($arg, '/textarea') !== false) {
-                    $inputHtml = '<textarea rows="5" class="form-control" name="' . $var . '" placeholder="请输入' . $name . '">{$' . $dbName . '[\'' . $var . '\'] ? \'\'}</textarea>';
+                    $inputHtml = '<textarea rows="5" class="form-control" name="' . $var . '" id="' . $var . '" placeholder="请输入' . $name . '">{$' . $dbName . '[\'' . $var . '\'] ? \'\'}</textarea>';
                 }
                 $formHtml .= '
-    <div class="form-group">
+    <div class="form-group" id="group-' . $var . '">
         <label>' . $name . '：</label>
         ' . $inputHtml . '
     </div>';
