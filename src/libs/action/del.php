@@ -14,7 +14,7 @@ class del implements ActionInterface
 public function del()
 {
     try {
-        \$id = Args::params('id');
+        \$id = Args::params('id/1');
         \$res = Db::name('$dbName')->where('id', \$id)->delete();
         if (!\$res) {
             throw new \Exception('删除失败');
