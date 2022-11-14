@@ -29,7 +29,7 @@ class add_html implements ActionInterface
                     $inputHtml = '<textarea rows="5" class="form-control" name="' . $var . '" id="' . $var . '" placeholder="请输入' . $name . '">{$' . $dbName . '[\'' . $var . '\'] ? \'\'}</textarea>';
                 }
                 $formHtml .= '
-    <div class="form-group" id="group-' . $var . '">
+    <div class="form-group">
         <label>' . $name . '：</label>
         ' . $inputHtml . '
     </div>';

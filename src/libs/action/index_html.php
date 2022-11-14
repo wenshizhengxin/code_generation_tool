@@ -24,7 +24,7 @@ class index_html implements ActionInterface
             if (strpos($arg, '/ss') !== false) {
                 $inputHtml = '<input type="text" class="form-control" name="' . $var . '" placeholder="请输入' . $name . '">';
                 if (strpos($arg, '/select') !== false) {
-                    $inputHtml = '<select class="selectpicker" name="' . $var . '"></select>';
+                    $inputHtml = '<select class="selectpicker" name="' . $var . '">{:options,}</select>';
                 }
                 $formHtml .= '
                             <div class="form-group">

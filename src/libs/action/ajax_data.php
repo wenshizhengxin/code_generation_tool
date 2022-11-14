@@ -24,7 +24,7 @@ class ajax_data implements ActionInterface
             $whereText .= "
         if (\$$var = Args::params('$arg')) {
             \$where[] = [
-                \$alias . '.' . '$var', 'like', '%' . \$$var . '%'
+                \$alias . '.$var', 'like', '%' . \$$var . '%'
             ];
         }";
         }
@@ -37,7 +37,7 @@ public function ajax_data()
         \$where = [];      
 $whereText 
         
-        \$query = Db::name('$dbName')->alias(\$alias);
+        \$query = Db::name('$dbName')->alias(\$alias)->group(\$alias . '.id', 'DESC');
         return \$this->tableJsonData(\$query, \$where, function (\$row) {
             \$row['create_time'] = date('Y-m-d H:i:s', \$row['create_time']);
             return \$row;
