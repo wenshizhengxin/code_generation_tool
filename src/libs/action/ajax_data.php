@@ -37,7 +37,7 @@ public function ajax_data()
         \$where = [];      
 $whereText 
         
-        \$query = Db::name('$dbName')->alias(\$alias)->group(\$alias . '.id', 'DESC');
+        \$query = Db::name('$dbName')->alias(\$alias)->order(\$alias . '.id', 'DESC');
         return \$this->tableJsonData(\$query, \$where, function (\$row) {
             \$row['create_time'] = date('Y-m-d H:i:s', \$row['create_time']);
             return \$row;
