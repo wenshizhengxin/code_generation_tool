@@ -52,7 +52,7 @@ class index_html implements ActionInterface
                         <div class="form-inline">
                             $formHtml
                             <div class="form-group" style="margin-left: 10px">
-                                <button type="submit" class="btn btn-primary">提交</button>
+                                <button type="submit" class="btn btn-primary">查询</button>
                                 <button type="reset" class="btn btn-default">重置</button>
                             </div>
                         </div>
@@ -70,7 +70,7 @@ class index_html implements ActionInterface
            href="?app=$dbName@add"><i class="fa fa-plus"></i>新增</a>
     </div>
     <div class="card-body table-responsive" style="padding-top: 0">
-        <table data-table="1" data-url="?app=$dbName@ajax_data" id="table1" class="table table-hover">
+        <table data-table="1" data-url="?app=$dbName@ajax_data" id="table1" class="table table-hover" data-page-list="10,20,30,50">
             <thead>
             <tr>
                 $fieldHtml

@@ -32,11 +32,12 @@ public function add()
             /************事务开始************/
             Db::startTrans();
             if (\$id === 0) { // 新增
-                \$insertData['create_time'] = \$timestamp;
+                \$insertData['create_time'] = \$insertData['update_time'] = \$timestamp;
                 \$res = Db::name('$dbName')->insert(\$insertData, false, true);
                 if (!\$res) {
                     throw new \Exception('添加失败');
                 }
+                \$id = \$res;
             } else { // 修改
                 \$insertData['update_time'] = \$timestamp;
                 \$res = Db::name('$dbName')->where('id', \$id)->update(\$insertData);
